@@ -62,6 +62,7 @@ const LiveriesPathSettingItem = (props: { path: string, setPath: (path: string) 
 };
 
 const SeparateLiveriesPathSettingItem = (props: {separateLiveriesPath: boolean, setSeperateLiveriesPath: CallableFunction, setLiveriesPath: CallableFunction}) => {
+    const { t } = useTranslation();
     const handleClick = () => {
         settings.set('mainSettings.liveriesPath', settings.get('mainSettings.msfsPackagePath'));
         props.setLiveriesPath(settings.get('mainSettings.msfsPackagePath'));
@@ -73,7 +74,7 @@ const SeparateLiveriesPathSettingItem = (props: {separateLiveriesPath: boolean, 
 
     return (
         <div className="flex items-center mb-2 mt-2">
-            <span className="text-base">Separate Liveries Directory</span>
+            <span className="text-base">{t('SettingsSection.DownloadSettings.SeparateLiveriesDirectory')}</span>
             <input
                 type="checkbox"
                 checked={props.separateLiveriesPath}
@@ -106,6 +107,7 @@ const DisableWarningSettingItem = (props: {disableWarning: boolean, setDisableWa
 };
 
 const DisableLiveryWarningItem = (props: {disableWarning: boolean, setDisableWarning: CallableFunction}) => {
+    const { t } = useTranslation();
     const handleClick = () => {
         const newState = !props.disableWarning;
         props.setDisableWarning(newState);
@@ -119,7 +121,7 @@ const DisableLiveryWarningItem = (props: {disableWarning: boolean, setDisableWar
 
     return (
         <div className="flex items-center mb-2 mt-2">
-            <span className="text-base">Disable Incompatible Livery Warnings</span>
+            <span className="text-base">{t('SettingsSection.GeneralSettings.DisableIncompatibleLiveryWarnings')}</span>
             <input
                 type="checkbox"
                 checked={props.disableWarning}
