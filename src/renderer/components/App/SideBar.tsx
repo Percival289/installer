@@ -68,7 +68,7 @@ export const SidebarMod: React.FC<SidebarModProps> = ({ mod, isSelected, handleS
                     break;
             }
         } else {
-            setStatusText('Not Available');
+            setStatusText('Not Installed');
             setIcon('notAvailable');
         }
     }, [modDownloadState]);
